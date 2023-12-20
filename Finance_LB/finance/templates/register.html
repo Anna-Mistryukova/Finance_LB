@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Регистрация
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="POST">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto"
+            id="username" name="username" placeholder="Имя пользователя" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Пароль" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Повторите пароль" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Зарегестрироваться</button>
+    </form>
+{% endblock %}

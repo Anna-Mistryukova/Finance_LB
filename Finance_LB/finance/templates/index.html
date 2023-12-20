@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+{% endblock %}
+
+{% block main %}
+
+
+    <div class="container ">
+
+
+        <!-- Portfolio Table -->
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Акция</th>
+                    <th scope="col">Имя</th>
+                    <th scope="col">Количество</th>
+                    <th scope="col">Цена</th>
+                    <th scope="col">Итого</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row["symbol"] }}</td>
+                    <td>{{ row["name"] }}</td>
+                    <td>{{ row["total_shares"] }}</td>
+                    <td>{{ row["current_price"] }}</td>
+                    <td>{{ row["total_value"] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- User's Cash and Portfolio Value -->
+        <div class="mt-4">
+            <p><strong>Кошелёк:</strong> {{ cash }}</p>
+            <p><strong>Баланс:</strong> {{ total_balance }}</p>
+        </div>
+    </div>
+{% endblock %}

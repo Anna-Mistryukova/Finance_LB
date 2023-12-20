@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+
+    <div class="container mt-4">
+
+        <form action="/sell" method="post">
+            <div class="mb-3">
+                <select class="form-control mx-auto w-auto" id="symbol" name="symbol" required>
+                    {% for stock in user_stocks %}
+                        <option value="{{ stock['symbol'] }}">{{ stock['symbol'] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <input type="number" class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Количество" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Продать</button>
+        </form>
+    </div>
+{% endblock %}
